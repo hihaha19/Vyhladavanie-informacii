@@ -1,0 +1,26 @@
+package IR.IR;
+
+import java.io.IOException;
+import java.text.ParseException;
+import java.util.Scanner;
+
+public class Main {
+
+		public static void  main(String[] args) throws IOException, ParseException {
+			
+			// zadanie mien cez konzolu
+			 Scanner names = new Scanner(System.in);
+			 
+			// findInfobox();
+			 
+			 System.out.println("Prve meno");
+		     String firstName = names.nextLine();
+		     
+		     System.out.println("Druhe meno");
+		     String secondName = names.nextLine();
+			
+			XMLParser.searchString(firstName, secondName);
+
+	}
+
+}

@@ -1,0 +1,11 @@
+package IR.IR;
+
+import java.io.IOException;
+import java.text.ParseException;
+import XMLParser;
+
+public class Index {
+	public static void  main(String[] args) throws IOException, ParseException {
+		searchString();
+}
+}

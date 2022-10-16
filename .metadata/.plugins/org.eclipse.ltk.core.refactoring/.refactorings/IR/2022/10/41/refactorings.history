@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;file&apos; in &apos;IR.IR.XMLParser.getIndexData(...)&apos; to &apos;dataFile&apos;&#x0D;&#x0A;- Original project: &apos;IR&apos;&#x0D;&#x0A;- Original element: &apos;IR.IR.XMLParser.getIndexData(File).file&apos;&#x0D;&#x0A;- Renamed element: &apos;file&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;file&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;IR.IR{XMLParser.java[XMLParser~getIndexData~QFile;@file!7048!7056!7053!7056!QFile;!0!true" name="dataFile" references="true" stamp="1665926290450" version="1.0"/>
+</session>

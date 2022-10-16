@@ -1,0 +1,63 @@
+package IR.IR;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.regex.Pattern;
+
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.LineIterator;
+
+public class Index {
+	
+	
+	
+	public void createIndex(String dataFile) throws IOException {
+		
+		File indexFile = new File("index.txt");
+		
+		String[] riadky = XMLParser.getIndexData(dataFile);		
+		String[] splitLine;
+		FileWriter fw = new FileWriter(indexFile);
+		 
+		for (int i = 0; i < riadky.length; i++) {
+			
+			splitLine = riadky[i].split(";");
+			
+			if(splitLine.length == 3)		{
+			//	fw.write(riadky[i]);
+				System.out.println(riadky[i]);
+			}
+				
+		}
+	 
+		fw.close();
+	}
+	
+	public HashMap<String, PostingList> loadIndex(String indexFilePath) throws IOException	
+	{
+		HashMap<String, PostingList> loadedIndex = new HashMap<String, PostingList>();
+		
+		File indexFile = new File(indexFilePath);
+		
+		String line;
+		String[] splitLine;
+		
+		try(LineIterator it = FileUtils.lineIterator(indexFile, "UTF-8")) {
+			while (it.hasNext()) {
+				  line = it.nextLine();
+				  splitLine = line.split(";");
+				  
+				  
+			}
+			
+			
+		}
+		
+		return loadedIndex;
+	}
+}	
+
