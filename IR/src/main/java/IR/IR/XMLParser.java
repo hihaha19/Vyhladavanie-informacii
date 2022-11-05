@@ -149,43 +149,13 @@ public class XMLParser {
 		
 		return dateOfDeath;
 	}
-	/*
-	public static String findPerson(Pattern patternFirstName, File file, Pattern infobox, int numOfPersons) throws IOException {
-		try(LineIterator it = FileUtils.lineIterator(file, "UTF-8")) {
-			  while (it.hasNext() && numOfPersons == 0) {
-			    String line = it.nextLine();
-			    Matcher infoPerson = infobox.matcher(line);
-			    				    
-			    boolean matchFound = infoPerson.find();	
-			    String multiLines = null;
-				if(matchFound) {
-					for (int i = 0; i <= 11; i++)		// ulozim si 11 dalsich riadkov
-			        {
-					//	myWriter.write("");
-						line = it.nextLine();
-			            if (multiLines == null)
-			            	multiLines = line + "\n";
-			            
-			            else {
-			            	multiLines = multiLines + line + "\n";    
-			            }      	
-			        }
-					
-				    Matcher matcher = patternFirstName.matcher(multiLines);	// hladam osobu 
-				    if (matcher.find())
-				    	return multiLines;
-				}	
-	}
-		}
-		return null;
-		}
-		*/		
+	
 	
 	private static String getMultilines(String dataFilePath, long position) throws IOException
 	{
-		File f=new File(dataFilePath);     //Creation of File Descriptor for input file
+		File f=new File(dataFilePath);     
 		RandomAccessFile rf = new RandomAccessFile(f, "r");
-		rf.seek(position);
+		rf.seek(position);	// nastavim sa na poziciu 
 		
 		int i=0;
 		String multilines = ""; 
@@ -212,33 +182,6 @@ public class XMLParser {
 	}
 	
 	
-	/*
-	public static ArrayList<Long> getNewLinesPositions(String dataFilePath) throws IOException {
-		
-		ArrayList<Long> indexLines = new ArrayList<Long>();		
-		Long counter = (long) 0;
-		indexLines.add(counter);
-		
-		File f = new File(dataFilePath);     
-	    FileReader fr = new FileReader(f);   
-	    BufferedReader br = new BufferedReader(fr);  
-	    int c = 0;             
-	    
-	    while((c = br.read()) != -1)         
-	    {
-	    	counter++;
-	        char character = (char) c;          
-	        if(character == '\n')
-	        	indexLines.add(counter+1);
-	    }
-	    
-	    br.close();
-	    
-	    return indexLines;
-	}
-	*/
-	
-	
 	public static ArrayList<String> getIndexData(String dataFilePath) throws IOException {	
 		
 		File dataFile = new File(dataFilePath);
@@ -248,17 +191,17 @@ public class XMLParser {
 		String line = null;
 		line = rf.readLine();
 			
-		while(line != null) {
+		while(line != null) {	//citam cely xml subor
 			     
 			    String multiLines = null;
 			    Pattern person = Pattern.compile("(?:name)\\s+[=]\\s(.*)");
 			    
 			    Matcher infoPerson = infobox.matcher(line);
-			    boolean matchFound = infoPerson.find();	
+			    boolean matchFound = infoPerson.find();			// hladam infobox
 
-			    Long position = rf.getFilePointer();
+			    Long position = rf.getFilePointer();			// mam ulozenu aktualnu poziciu v subore
 			    
-			    if(matchFound) {
+			    if(matchFound) {						//ak najdem infobox
 					for (int i = 0; i <= 15; i++)		// ulozim si 16 dalsich riadkov
 			        {
 						line = rf.readLine();
@@ -270,9 +213,9 @@ public class XMLParser {
 			            }      	
 			        }
 					
-					Matcher matcher = person.matcher(multiLines);
+					Matcher matcher = person.matcher(multiLines);	//ak v 16tich riadkoch najdem nejake meno
 				    if(matcher.find()) {
-				    	indexLines.add(matcher.group(1)+";"+(position)+";"+dataFile.getName());
+				    	indexLines.add(matcher.group(1)+";"+(position)+";"+dataFile.getName());		// pridam do index lines meno osoby, poziciu v subore a nazov suboru
 			            System.out.println(matcher.group(1)); 
 
 	
@@ -283,107 +226,5 @@ public class XMLParser {
 			  }line = rf.readLine();}
 		return indexLines;
 	}
-	/*
-	public static int findInfobox() throws IOException {
-		FileWriter myWriter = new FileWriter("filename.txt");
-		File file = new File("wiki_dump1.xml-p1p41242");
-		Pattern infobox = Pattern.compile("(\\{\\{Infobox person)");		
-		
-		try(LineIterator it = FileUtils.lineIterator(file, "UTF-8")) {
-			  while (it.hasNext()) {
-			    String line = it.nextLine();
-			    Matcher infoPerson = infobox.matcher(line);
-			    				    
-			    boolean matchFound = infoPerson.find();	
-			    String multiLines = null;
-				if(matchFound) {
-					for (int i = 0; i <= 11; i++)		// ulozim si 11 dalsich riadkov
-			        {
-						myWriter.write(line + "\n");
-						line = it.nextLine();
-			            if (multiLines == null)
-			            	multiLines = line + "\n";
-			            
-			            else {
-			            	multiLines = multiLines + line + "\n";    
-			            }      	
-			        }
-	}
-			  }}
-		return 0;}
-	
-	
-	public static 
-	
-	
-	
-	/*
-	public static void ParseData (String firstName, String secondName) throws IOException, ParseException {
 
-	      
-	    SimpleDateFormat s=new SimpleDateFormat("yyyy-MM-dd");
-		Scanner fileScanner = null;
-		
-		
-		int lineID = 0;
-		List lineNumbers = new ArrayList();
-		List<String> datumy=new ArrayList<String>();  		
-		
-		
-		Pattern patternFirstName = Pattern.compile("(?:name)(?:\\s+[=]\\s)(?:" + firstName + ")(?:(.|\\n)*)(?:| birth_date\\s[^0-9]+\\d|(?<mesiac>[0-9]+)|([0-9]+))", 
-				Pattern.MULTILINE);	
-		
-		Pattern patternSecondName = Pattern.compile("(?:name)(?:\\s+[=]\\s)(?:" + secondName + ")(?:(.|\\n)*)(?:| birth_date\\s[^0-9]+\\d|(?<mesiac>[0-9]+)|([0-9]+))", 
-				Pattern.MULTILINE);	
-		
-		File file = new File("wiki_dump1.xml-p1p41242");
-		Pattern infobox = Pattern.compile("(\\{\\{Infobox person)");		
-		int numOfPersons = 0;
-		String multiLines = null;
-	//	FileWriter myWriter = new FileWriter("filename.txt");
-		 
-		multiLines = findPerson(patternFirstName, file, infobox, numOfPersons);	 
-			 
-		Date dateOfBirth1 = null;
-		Date dateOfDeath1 = null;
-		Date dateOfBirth2 = null;
-		Date dateOfDeath2 = null;
-					    	
-		dateOfBirth1 = findBirthday(multiLines);
-		//System.out.println("Datum narodenia 1 " + dateOfBirth1);
-		dateOfDeath1 = findDeath(multiLines);
-	//	System.out.println("Datum umrtia 1 " + dateOfDeath1);			    	
-		
-		if(dateOfBirth1 != null && dateOfDeath1 != null) {
-			System.out.println(s.format(dateOfBirth1) + " " + s.format(dateOfDeath1));
-		//	numOfPersons = 1;
-			}	
-		
-		System.out.println("Skacem na druhu osobu");
-		
-		multiLines = findPerson(patternSecondName, file, infobox, numOfPersons);
-		
-		dateOfBirth2 = findBirthday(multiLines);
-		dateOfDeath2 = findDeath(multiLines);
-								 
-							 	
-							 if(dateOfBirth2 != null && dateOfDeath2 != null) {
-								 System.out.println(s.format(dateOfBirth2) + " " + s.format(dateOfDeath2));
-							//	 pocetOsob = 2;
-							 }
-			
-		
-		
-		if(dateOfBirth1.before(dateOfBirth2) && dateOfDeath1.after(dateOfBirth2) ||
-				dateOfBirth1.before(dateOfDeath2) && dateOfDeath1.after(dateOfDeath2) ||
-				dateOfBirth1.before(dateOfBirth2) && dateOfDeath1.after(dateOfDeath2) ||
-				dateOfBirth1.after(dateOfBirth2) && dateOfDeath1.before(dateOfDeath2) )
-			    {
-			      System.out.print("Mohli sa stretnut");
-			    }
-		
-		else System.out.println("Nemohli sa stretnut");
-		
-
-	}*/
 }

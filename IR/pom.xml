@@ -48,6 +48,43 @@
     <version>1.10</version>
 </dependency>
 
+	<!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core -->
+	<dependency>
+	    <groupId>org.apache.spark</groupId>
+	    <artifactId>spark-core_2.12</artifactId>
+	    <version>3.3.1</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.apache.spark/spark-sql -->
+	<dependency>
+	    <groupId>org.apache.spark</groupId>
+	    <artifactId>spark-sql_2.12</artifactId>
+	    <version>3.3.1</version>
+	    <scope>provided</scope>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-core -->
+<dependency>
+    <groupId>org.apache.lucene</groupId>
+    <artifactId>lucene-core</artifactId>
+    <version>9.4.1</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-queryparser -->
+<dependency>
+    <groupId>org.apache.lucene</groupId>
+    <artifactId>lucene-queryparser</artifactId>
+    <version>9.4.1</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-codecs -->
+<dependency>
+    <groupId>org.apache.lucene</groupId>
+    <artifactId>lucene-codecs</artifactId>
+    <version>9.4.1</version>
+    <scope>test</scope>
+</dependency>
+
   </dependencies>
 
   <build>
@@ -92,6 +129,7 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
+        
       </plugins>
     </pluginManagement>
   </build>
