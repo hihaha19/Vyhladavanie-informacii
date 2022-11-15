@@ -19,11 +19,9 @@ public class Main {
 
 	// teraz skusit submit cez spark
 	
-		public static void  main(String[] args) throws IOException, ParseException {	
-			SparkConf sparkConf = new SparkConf().setAppName("MohliSaStretnut").setMaster("spark://localhost:7077");
-			JavaSparkContext ctx = new JavaSparkContext(sparkConf);
+		public static void  main(String[] args) throws IOException, ParseException {		
 			
-			 String dataFile = "wiki_dump1.xml-p1p41242"; 
+			String dataFile = "wiki_dump1.xml-p1p41242"; 
 			 String indexFile = "index.txt"; 
 			 
 			// BufferedReader txtReader = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("index.txt")));
