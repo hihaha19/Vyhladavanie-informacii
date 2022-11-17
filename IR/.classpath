@@ -7,6 +7,12 @@
   <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
   <classpathentry kind="var" path="M2_REPO/junit/junit/4.13.2/junit-4.13.2.jar" sourcepath="M2_REPO/junit/junit/4.13.2/junit-4.13.2-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar" sourcepath="M2_REPO/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/spark/spark-avro_2.13/3.3.1/spark-avro_2.13-3.3.1.jar" sourcepath="M2_REPO/org/apache/spark/spark-avro_2.13/3.3.1/spark-avro_2.13-3.3.1-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/spark/spark-tags_2.13/3.3.1/spark-tags_2.13-3.3.1.jar" sourcepath="M2_REPO/org/apache/spark/spark-tags_2.13/3.3.1/spark-tags_2.13-3.3.1-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/scala-lang/scala-library/2.12.15/scala-library-2.12.15.jar" sourcepath="M2_REPO/org/scala-lang/scala-library/2.12.15/scala-library-2.12.15-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/spark-project/spark/unused/1.0.0/unused-1.0.0.jar" sourcepath="M2_REPO/org/spark-project/spark/unused/1.0.0/unused-1.0.0-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/scala-lang/modules/scala-parallel-collections_2.13/1.0.3/scala-parallel-collections_2.13-1.0.3.jar" sourcepath="M2_REPO/org/scala-lang/modules/scala-parallel-collections_2.13/1.0.3/scala-parallel-collections_2.13-1.0.3-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/tukaani/xz/1.8/xz-1.8.jar" sourcepath="M2_REPO/org/tukaani/xz/1.8/xz-1.8-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar" sourcepath="M2_REPO/commons-io/commons-io/2.11.0/commons-io-2.11.0-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/commons-codec/commons-codec/1.10/commons-codec-1.10.jar" sourcepath="M2_REPO/commons-codec/commons-codec/1.10/commons-codec-1.10-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/spark/spark-core_2.12/3.3.1/spark-core_2.12-3.3.1.jar" sourcepath="M2_REPO/org/apache/spark/spark-core_2.12/3.3.1/spark-core_2.12-3.3.1-sources.jar"/>
@@ -19,9 +25,7 @@
   <classpathentry kind="var" path="M2_REPO/org/apache/avro/avro-mapred/1.11.0/avro-mapred-1.11.0.jar" sourcepath="M2_REPO/org/apache/avro/avro-mapred/1.11.0/avro-mapred-1.11.0-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/avro/avro-ipc/1.11.0/avro-ipc-1.11.0.jar" sourcepath="M2_REPO/org/apache/avro/avro-ipc/1.11.0/avro-ipc-1.11.0-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/xerial/snappy/snappy-java/1.1.8.4/snappy-java-1.1.8.4.jar" sourcepath="M2_REPO/org/xerial/snappy/snappy-java/1.1.8.4/snappy-java-1.1.8.4-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/tukaani/xz/1.9/xz-1.9.jar" sourcepath="M2_REPO/org/tukaani/xz/1.9/xz-1.9-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/twitter/chill_2.12/0.10.0/chill_2.12-0.10.0.jar" sourcepath="M2_REPO/com/twitter/chill_2.12/0.10.0/chill_2.12-0.10.0-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/scala-lang/scala-library/2.12.15/scala-library-2.12.15.jar" sourcepath="M2_REPO/org/scala-lang/scala-library/2.12.15/scala-library-2.12.15-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/twitter/chill-java/0.10.0/chill-java-0.10.0.jar" sourcepath="M2_REPO/com/twitter/chill-java/0.10.0/chill-java-0.10.0-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/esotericsoftware/kryo-shaded/4.0.2/kryo-shaded-4.0.2.jar" sourcepath="M2_REPO/com/esotericsoftware/kryo-shaded/4.0.2/kryo-shaded-4.0.2-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/esotericsoftware/minlog/1.3.0/minlog-1.3.0.jar" sourcepath="M2_REPO/com/esotericsoftware/minlog/1.3.0/minlog-1.3.0-sources.jar"/>
@@ -33,7 +37,6 @@
   <classpathentry kind="var" path="M2_REPO/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar" sourcepath="M2_REPO/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/spark/spark-launcher_2.12/3.3.1/spark-launcher_2.12-3.3.1.jar" sourcepath="M2_REPO/org/apache/spark/spark-launcher_2.12/3.3.1/spark-launcher_2.12-3.3.1-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/spark/spark-tags_2.12/3.3.1/spark-tags_2.12-3.3.1.jar" sourcepath="M2_REPO/org/apache/spark/spark-tags_2.12/3.3.1/spark-tags_2.12-3.3.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/spark-project/spark/unused/1.0.0/unused-1.0.0.jar" sourcepath="M2_REPO/org/spark-project/spark/unused/1.0.0/unused-1.0.0-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/spark/spark-kvstore_2.12/3.3.1/spark-kvstore_2.12-3.3.1.jar" sourcepath="M2_REPO/org/apache/spark/spark-kvstore_2.12/3.3.1/spark-kvstore_2.12-3.3.1-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/fusesource/leveldbjni/leveldbjni-all/1.8/leveldbjni-all-1.8.jar" sourcepath="M2_REPO/org/fusesource/leveldbjni/leveldbjni-all/1.8/leveldbjni-all-1.8-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/rocksdb/rocksdbjni/6.20.3/rocksdbjni-6.20.3.jar" sourcepath="M2_REPO/org/rocksdb/rocksdbjni/6.20.3/rocksdbjni-6.20.3-sources.jar"/>
