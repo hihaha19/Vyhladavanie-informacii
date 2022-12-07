@@ -1,9 +1,0 @@
-package IR.IR;
-
-import java.io.IOException;
-import java.text.ParseException;
-
-public class Index {
-
-
-}

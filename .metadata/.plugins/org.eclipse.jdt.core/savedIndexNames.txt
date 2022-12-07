@@ -1,7 +1,0 @@
-INDEX VERSION 1.131+C:\Users\hanko\eclipse-workspace\IR\.metadata\.plugins\org.eclipse.jdt.core
-4274572388.index
-1865797976.index
-2735638532.index
-1043974738.index
-4182656169.index
-1653036234.index
